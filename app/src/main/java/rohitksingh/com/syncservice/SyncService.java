@@ -17,7 +17,7 @@ public class SyncService extends Service{
     public void onCreate()
     {
         service_counter =0;
-        Log.d("SyncActivity", "Service onCreate: ");
+        Log.d("TimerService", "Service onCreate: SyncService");
     }
 
     @Override

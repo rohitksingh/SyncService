@@ -38,7 +38,7 @@ public class TimerService extends SyncService {
             public void run() {
                 for(int i=0;i<10;i++)
                 {
-                    Log.d(TAG, "run: "+i);
+                    Log.d(TAG, "run: "+i +"val"+ isServiceRunning());
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {

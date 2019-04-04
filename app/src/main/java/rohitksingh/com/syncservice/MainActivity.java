@@ -21,7 +21,7 @@ public class MainActivity extends SyncActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startService(new Intent(MainActivity.this, TimerService.class));
+                startService(getIntent());
             }
         });
 
@@ -32,5 +32,11 @@ public class MainActivity extends SyncActivity {
     public void syncActivity()
     {
         Toast.makeText(this, syncService.isServiceRunning()+"", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public Intent getIntent() {
+        Intent intent = new Intent(this, TimerService.class);
+        return intent;
     }
 }

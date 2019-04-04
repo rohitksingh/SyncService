@@ -17,12 +17,13 @@ public abstract class SyncActivity extends AppCompatActivity {
     public Intent checkServiceRunning;
     private boolean bound = false;
 
-    private static final String TAG = "SyncActivity";
+    private static final String TAG = "TimerService";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        Log.d(TAG, "onCreate: SyncActivity");
         super.onCreate(savedInstanceState);
         bindService();
     }
@@ -30,6 +31,7 @@ public abstract class SyncActivity extends AppCompatActivity {
     @Override
     public void onStop()
     {
+        Log.d(TAG, "onStop: SyncActivity");
         super.onStop();
         unbindService();
     }
@@ -58,7 +60,7 @@ public abstract class SyncActivity extends AppCompatActivity {
 
     public void bindService(){
         Log.d(TAG, "bindService: ");
-        checkServiceRunning = new Intent(SyncActivity.this, SyncService.class);
+        checkServiceRunning = getIntent();
         bindService(checkServiceRunning, serviceConnection, Context.BIND_AUTO_CREATE);
 
     }
@@ -70,6 +72,8 @@ public abstract class SyncActivity extends AppCompatActivity {
     }
 
     public abstract void syncActivity();
+
+    public abstract Intent getIntent();
 
 
 }
