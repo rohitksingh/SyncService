@@ -38,6 +38,10 @@ public class TimerService extends SyncService {
             public void run() {
                 for(int i=0;i<10;i++)
                 {
+                    if(callback!=null) {
+                        callback.update(i + "");
+                    }
+
                     Log.d(TAG, "run: "+i +"val"+ isServiceRunning());
                     try {
                         Thread.sleep(1000);

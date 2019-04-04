@@ -13,6 +13,8 @@ public class SyncService extends Service{
 
     public IBinder serviceBinder = new ServiceBinder();
 
+    public SyncCallback callback;
+
     @Override
     public void onCreate()
     {
@@ -36,6 +38,11 @@ public class SyncService extends Service{
     public boolean isServiceRunning()
     {
         return service_counter == 0 ? false : true;
+    }
+
+    public void registerCallback(SyncCallback callback)
+    {
+        this.callback = callback;
     }
 
 

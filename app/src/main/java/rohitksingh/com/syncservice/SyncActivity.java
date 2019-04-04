@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 
-public abstract class SyncActivity extends AppCompatActivity {
+public abstract class SyncActivity extends AppCompatActivity implements SyncCallback{
 
 
     public SyncService syncService;
@@ -46,6 +46,7 @@ public abstract class SyncActivity extends AppCompatActivity {
             syncService = binder.getService();
             boolean status = syncService.isServiceRunning();
             Log.d(TAG, "onServiceConnected: "+ status);
+            syncService.registerCallback(SyncActivity.this);
             syncActivity();
 
         }
@@ -74,6 +75,7 @@ public abstract class SyncActivity extends AppCompatActivity {
     public abstract void syncActivity();
 
     public abstract Intent getIntent();
+
 
 
 }
