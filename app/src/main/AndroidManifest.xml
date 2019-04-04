@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <service android:name=".TimerService"/>
-        <service android:name=".SyncService"/>
+        <service android:name=".Sync.SyncService"/>
     </application>
 
 </manifest>

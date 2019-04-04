@@ -5,6 +5,8 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import rohitksingh.com.syncservice.Sync.SyncService;
+
 public class TimerService extends SyncService {
 
     private static final String TAG = "TimerService";

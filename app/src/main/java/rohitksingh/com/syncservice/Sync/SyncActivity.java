@@ -1,4 +1,4 @@
-package rohitksingh.com.syncservice;
+package rohitksingh.com.syncservice.Sync;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 
-public abstract class SyncActivity extends AppCompatActivity implements SyncCallback{
+public abstract class SyncActivity extends AppCompatActivity implements SyncCallback {
 
 
     public SyncService syncService;

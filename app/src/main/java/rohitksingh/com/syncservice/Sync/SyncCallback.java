@@ -1,4 +1,4 @@
-package rohitksingh.com.syncservice;
+package rohitksingh.com.syncservice.Sync;
 
 public interface SyncCallback {
 
