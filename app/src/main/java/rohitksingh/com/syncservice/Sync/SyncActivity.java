@@ -13,6 +13,11 @@ import android.util.Log;
 public abstract class SyncActivity extends AppCompatActivity implements SyncCallback {
 
 
+    //TODO
+    // Create a utility method
+    // If SplashActivity is used then the time will be reduced? how use an AppUtility
+
+
     public SyncService syncService;
     public Intent checkServiceRunning;
     private boolean bound = false;
@@ -72,8 +77,13 @@ public abstract class SyncActivity extends AppCompatActivity implements SyncCall
         unbindService(serviceConnection);
     }
 
+
+    //// Abstract methods
+
+    // To syncActivity state when actvity is ewntered
     public abstract void syncActivity();
 
+    // Intent to start specific Service
     public abstract Intent getIntent();
 
 
