@@ -26,10 +26,10 @@ public abstract class SyncActivity extends AppCompatActivity implements SyncCall
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
+    protected void onStart()
     {
         Log.d(TAG, "onCreate: SyncActivity");
-        super.onCreate(savedInstanceState);
+        super.onStart();
         bindService();
     }
 
@@ -82,9 +82,6 @@ public abstract class SyncActivity extends AppCompatActivity implements SyncCall
 
     // To syncActivity state when actvity is ewntered
     public abstract void syncActivity();
-
-    // Intent to start specific Service
-    public abstract Intent getIntent();
 
 
 
